@@ -1,0 +1,113 @@
+@import url(../fonts.css);
+
+:root {
+    /* Root Header */
+    --header-background: #868871;
+    --header-color: #f5f5db;
+    --header-font-family-1: Roboto;
+    --header-font-family-2: "Edu NSW ACT Cursive";
+
+    /* Root Main */
+    --main-category-color: #f5f5db;
+    --main-header-font-family-1: Roboto;
+}
+
+/* Global CSS */
+body {
+    background-color: #9ea381;
+}
+
+/* header content */
+.header {
+    background-color: var(--header-background);
+    height: 10rem;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 2rem;
+    color: var(--header-color);
+}
+
+.bloco_header_1 {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    font-family: var(--header-font-family-1);
+    width: 27rem;
+    padding: 0.5rem;
+}
+
+.bloco_header_1 .logo div > h1 {
+    font-size: 3.2rem;
+    letter-spacing: 0.7rem;
+    font-weight: bolder;
+    font-variant: small-caps;
+}
+
+.bloco_header_1 .logo div > h2 {
+    font-size: 1.3rem;
+    letter-spacing: 0.2rem;
+}
+
+.bloco_header_2 {
+    font-family: var(--header-font-family-2);
+    display: flex;
+    align-items: start;
+    font-size: 1.7rem;
+    letter-spacing: 0.5rem;
+}
+
+.bloco_header_2 h2 {
+    font-weight: normal;
+}
+
+.logo {
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+}
+
+/* main content */
+
+.container {
+    padding: 2rem 0;
+}
+
+.bloco_category {
+    font-size: 2rem;
+    font-family: var(--header-font-family-1);
+    color: var(--main-category-color);
+    margin-bottom: 1rem;
+    margin-left: 0.5rem;
+}
+
+.bloco_category h1 {
+    font-weight: normal;
+}
+
+.bloco_table {
+    display: grid;
+    grid-template-columns: 1fr;
+    color: #f5f5db;
+}
+
+.bloco_table .table_1 tr > th:nth-child(1) {
+    text-align: start;
+}
+
+.bloco_table .table_1 tr > th:nth-child(2) {
+    text-align: end;
+}
+
+.bloco_table > .table_1,
+tbody {
+    font-size: 2rem;
+    font-weight: normal;
+    font-family: var(--header-font-family-1);
+}
+
+.bloco_table .table_1 tr > th {
+    padding: 0.5rem;
+    background-color: #868871;
+    font-weight: 500;
+}

@@ -1,0 +1,18 @@
+@import url(../fonts.css);
+
+:root {
+    /* Root Header */
+    --header-background: #868871;
+    --header-color: #f5f5db;
+    --header-font-family-1: Roboto;
+    --header-font-family-2: "Edu NSW ACT Cursive";
+
+    /* Root Main */
+    --main-category-color: #f5f5db;
+    --main-header-font-family-1: Roboto;
+}
+
+/* Global CSS */
+body {
+    background-color: #9ea381;
+}

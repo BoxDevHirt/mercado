@@ -1,0 +1,19 @@
+* {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    box-sizing: border-box;
+    list-style: none;
+}
+
+/* Messagens erros */
+
+.messages_errors {
+    background-color: #f5f5db;
+    color: #868871;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+    border-radius: 10px;
+    border: 5px solid #9ea381;
+}
