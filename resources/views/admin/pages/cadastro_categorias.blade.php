@@ -15,7 +15,7 @@
         <form action="{{ Route('admin.category.post') }}" method="POST">
             @csrf
             <input type="hidden" name="category" value="category_post">
-            <label class="label_style" for="categories">Nome da categoria</label>
+            <label class="label_style" for="categories"><i class="fa-solid fa-file-signature"></i>  Nome da categoria</label>
             <input class="input_style" type="text" id="categories" name="name" placeholder="Forneça uma categoria...">
             <button class="btn_submit" type="submit"><i class="fa-solid fa-arrow-up-right-from-square"></i> Cadastrar</button>
         </form>

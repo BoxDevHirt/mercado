@@ -32,12 +32,12 @@ Route::prefix('client')->group(function () {
     /**
      * @Routes - Rotas relacionadas ao painel preços de produtos
      */
-    Route::get('/', [ClientMercadoController::class, 'index'])->name('client');
+    Route::get('/', [ClientMercadoController::class, 'client'])->name('client');
 
     /**
      * @Routes - Rotas relacionadas ao login
      */
-    Route::get('/login', [AuthController::class, 'index'])->name('client.login');
+    Route::get('/login', [AuthController::class, 'login'])->name('client.login');
     Route::post('/login', [AuthController::class, 'post'])->name('client.login.post');
 });
 

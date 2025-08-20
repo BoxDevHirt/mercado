@@ -13,9 +13,9 @@
                 <table class="table-custom">
                     <thead>
                     <tr>
-                        <th>ID</th>
-                        <th>Nome</th>
-                        <th>Preço</th>
+                        <th><i class="fa-solid fa-fingerprint"></i> ID</th>
+                        <th><i class="fa-solid fa-file-signature"></i> Nome</th>
+                        <th><i class="fa-solid fa-tag"></i> Preço</th>
                     </tr>
                     </thead>
                     <tbody>

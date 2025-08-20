@@ -170,6 +170,3 @@ body {
     background: #f5f5db;
 }
 
-.table-custom tbody tr:hover {
-    background: rgba(245, 245, 245, 0.09);
-}

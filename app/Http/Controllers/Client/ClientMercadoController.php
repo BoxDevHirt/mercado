@@ -3,16 +3,17 @@
 namespace App\Http\Controllers\Client;
 
 use App\Http\Controllers\Controller;
+use App\Models\Category;
+use App\Models\Products;
 use Illuminate\Http\Request;
 
 class ClientMercadoController extends Controller
 {
-    public function index()
+    public function client()
     {
-        return view('client.pages.index');
+        $products = Products::all();
+        $category = Category::first();
+        return view('client.pages.client', compact('products', "category"));
     }
 
-    public function getPage() {}
-
-    public function post() {}
 }

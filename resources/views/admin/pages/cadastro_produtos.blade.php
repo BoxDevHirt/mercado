@@ -20,7 +20,7 @@
             <form action="{{ Route('admin.product.post') }}" method="POST">
                 @csrf
                 <input type="hidden" name="category" value="category_product">
-                <label class="label_style" for="product_category_select">Nome do produto</label>
+                <label class="label_style" for="product_category_select"><i class="fa-solid fa-layer-group"></i> Categoria produto</label>
                 <select id="product_category_select" class="select_style" name="category_id">
                     <option disabled selected>Selecione....</option>
                     @foreach($category as $records)
@@ -31,11 +31,11 @@
                 </select>
                 <br/>
                 <br/>
-                <label class="label_style" for="product_name">Nome do produto</label>
+                <label class="label_style" for="product_name"><i class="fa-solid fa-file-signature"></i> Nome do produto</label>
                 <input class="input_style" type="text" id="category" name="name" value="{{ old('name') }}" placeholder="Forneça um nome...">
                 <br/>
                 <br/>
-                <label class="label_style" for="product_price">Preço produto</label>
+                <label class="label_style" for="product_price"><i class="fa-solid fa-tag"></i> Preço produto</label>
                 <input class="input_style" type="text" id="category" name="price" value="{{ old('price') }}" placeholder="Forneça um preço....">
                 <br/>
                 <button class="btn_submit" type="submit"><i class="fa-solid fa-arrow-up-right-from-square"></i> Cadastrar</button>
