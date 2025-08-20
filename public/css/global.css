@@ -8,12 +8,33 @@
 
 /* Messagens erros */
 
-.messages_errors {
-    background-color: #f5f5db;
+.messages_errors{
+    background-color: #ebcc94;
+    border: 2px solid #f5f5db;
+    padding: 1.3rem;
+    width: 100%;
+    border-radius: 5px;
     color: #868871;
-    padding: 1rem;
     margin-bottom: 1rem;
-    font-size: 1.2rem;
-    border-radius: 10px;
-    border: 5px solid #9ea381;
+}
+
+.message-success{
+    background-color: #868871;
+    border: 2px solid #f5f5db;
+    padding: 1.3rem;
+    width: 100%;
+    border-radius: 5px;
+    color: #f5f5db;
+    margin-bottom: 1rem;
+}
+
+.alert-warning{
+    background-color: #f5f5db;
+    border: 2px solid #868871;
+    padding: 1.3rem;
+    width: 100%;
+    border-radius: 5px;
+    color: #868871;
+    margin-bottom: 1rem;
+    margin-top: -1rem;
 }

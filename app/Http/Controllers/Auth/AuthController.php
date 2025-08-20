@@ -22,8 +22,8 @@ class AuthController extends Controller
                 'password' => 'required|string',
             ],
             [
-                'email' => 'O email é obrigatório',
-                'password' => 'A senha é obrigatório',
+                'email.required' => 'O email é obrigatório',
+                'password.required' => 'A senha é obrigatório',
             ]
         );
 

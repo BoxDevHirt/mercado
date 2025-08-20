@@ -15,4 +15,161 @@
 /* Global CSS */
 body {
     background-color: #9ea381;
+    font-family: var(--header-font-family-1);
+}
+
+/* header content */
+.bloco_header {
+    background-color: #f5f5db;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem;
+}
+
+.bloco_header > div {
+    font-size: 1.5rem;
+    color: #868871;
+}
+
+.bloco_header div > i {
+    font-size: 2rem;
+}
+
+.bloco_header form > button {
+    font-size: 1.5rem;
+    width: auto;
+    padding: 0.5rem;
+    border: none;
+    background-color: #868871;
+    color: #f5f5db;
+    border-radius: 5px;
+}
+
+/* main content */
+
+.block_navigation {
+    width: 15rem;
+    font-family: var(--main-header-font-family-1);
+    background-color: #868871;
+    padding: 1rem;
+}
+
+.block_navigation ul > li {
+    line-height: 2;
+}
+
+.block_navigation ul li a {
+    color: #f5f5db;
+}
+
+.main_content {
+    display: flex;
+    height: 100%;
+    position: absolute;
+    width: 100%;
+}
+
+.container{
+    padding: 1rem;
+    width: 100%;
+}
+
+.container > h1{
+    color: #f5f5db;
+    margin-bottom: 2rem;
+}
+
+.bloco_action{
+    display: flex;
+    gap: 1rem;
+    justify-content: end;
+}
+
+.bloco_action > .btn:nth-child(1){
+    background-color: #868871;
+    color: #f5f5db;
+    font-size: 1rem;
+    padding: .5rem;
+    border-radius: 5px;
+}
+
+.bloco_action > .btn:nth-child(2){
+    background-color: #f5f5db;
+    color: #868871;
+    font-size: 1rem;
+    padding: .5rem;
+    border-radius: 5px;
+}
+
+.input_style{
+    width: 100%;
+    padding: 1rem;
+    background-color: #f5f5db;
+    color: #868871;
+    outline: none;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    margin-top: .5rem;
+}
+
+.label_style{
+    color: #f5f5db;
+    font-size: 1.3rem;
+    font-weight: normal;
+}
+
+.select_style{
+    width: 100%;
+    padding: 1rem;
+    background-color: #f5f5db;
+    color: #868871;
+    outline: none;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    margin-top: .5rem;
+}
+
+.btn_submit{
+    width: 20rem;
+    padding: .8rem;
+    margin-top: 1rem;
+    border-radius: 5px;
+    font-size: 1rem;
+    color: #868871;
+    background-color: #f5f5db;
+    border: none;
+    cursor: pointer;
+}
+
+/* table content product */
+
+.table-custom {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    font-family: var(--main-header-font-family-1);
+}
+
+.table-custom thead th {
+    background: var(--header-background);
+    color: var(--header-color);
+    padding: 10px;
+    text-align: left;
+}
+
+.table-custom tbody td {
+    color: #555742;
+    padding: 8px;
+    border-bottom: 1px solid #eee;
+}
+
+.table-custom tbody tr:nth-child(even) {
+    background: #f5f5db;
+}
+
+.table-custom tbody tr:hover {
+    background: rgba(245, 245, 245, 0.09);
 }

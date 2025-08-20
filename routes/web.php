@@ -7,14 +7,14 @@ use Illuminate\Support\Facades\Route;
 
 
 /**
- * Rota coringa 
+ * Rota coringa
  * @Route - Rota de fallback
  */
 Route::fallback(function () {
     if (!auth()->check()) {
         return redirect('/client');
     }
-    abort(404); 
+    abort(404);
 });
 
 
@@ -51,4 +51,17 @@ Route::middleware('auth')->prefix('admin')->group(function () {
      */
     Route::get('/', [AdminController::class, 'index'])->name('admin');
     Route::post('/logout', [AdminController::class, 'post'])->name('admin.logout');
+
+    /**
+     * @Route - Rotas relacionadas ao cadastro de produtos
+     */
+    Route::get('/produtos/{page}', [AdminController::class, 'getPage'])->name('admin.product');
+    Route::get('/produtos/cadastro/{page}', [AdminController::class, 'getPage'])->name('admin.product.get');
+    Route::post('/produtos', [AdminController::class, 'post'])->name('admin.product.post');
+
+    /**
+     * @Route - Rotas relacionadas ao cadastro de categoria
+     */
+    Route::get('/categoria/{page}', [AdminController::class, 'getPage'])->name('admin.category.get');
+    Route::post('/categoria', [AdminController::class, 'post'])->name('admin.category.post');
 });
