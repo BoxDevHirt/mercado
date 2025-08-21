@@ -10,25 +10,36 @@
         <div>
             @if($products == null)
             @else
-                <table class="table-custom">
+                <table id="myTable" class="table-custom">
                     <thead>
-                    <tr>
-                        <th><i class="fa-solid fa-fingerprint"></i> ID</th>
-                        <th><i class="fa-solid fa-file-signature"></i> Nome</th>
-                        <th><i class="fa-solid fa-tag"></i> Preço</th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    @foreach($products as $records)
                         <tr>
-                            <td>{{ $records->id }}</td>
-                            <td>{{ $records->name }}</td>
-                            <td>R$ {{ $records->price }}</td>
+                            <th><i class="fa-solid fa-fingerprint"></i> ID</th>
+                            <th><i class="fa-solid fa-file-signature"></i> Nome</th>
+                            <th><i class="fa-solid fa-tag"></i> Preço</th>
                         </tr>
-                    @endforeach
-                    </tbody>
+                    </thead>
+                    <tbody></tbody>
                 </table>
             @endif
         </div>
     </div>
 @endsection
+@push('script')
+    <script>
+        $(document).ready(function() {
+            $('#myTable').DataTable({
+                processing: true,
+                serverSide: true,
+                ajax: {
+                    url: '{{ route("admin.datatables.product") }}',
+                    type: "GET"
+                },
+                columns: [
+                    { data: 'id', name: 'id' },
+                    { data: 'name', name: 'name' },
+                    { data: 'price', name: 'price' },
+                ],
+            });
+        });
+    </script>
+@endpush

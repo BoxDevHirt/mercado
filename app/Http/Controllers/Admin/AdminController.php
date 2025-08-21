@@ -5,9 +5,9 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Models\Category;
 use App\Models\Products;
-use Illuminate\Container\Attributes\Auth;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth as FacadesAuth;
+use Illuminate\Support\Facades\Auth;
+use Yajra\DataTables\DataTables;
 
 class AdminController extends Controller
 {
@@ -39,6 +39,12 @@ class AdminController extends Controller
         return View('admin.pages.'.$page, compact('title', 'category', 'products'));
     }
 
+    public function getProductsData()
+    {
+        $products = Products::select(['id', 'name', 'price']);
+        return DataTables::of($products)->make(true);
+    }
+
     public function post(Request $request)
     {
         $post = $request->except('_token');
@@ -47,7 +53,7 @@ class AdminController extends Controller
          */
         $logout = $request->input('logout');
         if ($logout != null) {
-            FacadesAuth::logout();
+            Auth::logout();
             return redirect('client');
         }
 

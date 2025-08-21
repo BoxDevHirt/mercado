@@ -56,6 +56,7 @@ Route::middleware('auth')->prefix('admin')->group(function () {
      * @Route - Rotas relacionadas ao cadastro de produtos
      */
     Route::get('/produtos/{page}', [AdminController::class, 'getPage'])->name('admin.product');
+    Route::get('/produtos/datatables', [AdminController::class, 'getProductsData'])->name('admin.datatables.product');
     Route::get('/produtos/cadastro/{page}', [AdminController::class, 'getPage'])->name('admin.product.get');
     Route::post('/produtos', [AdminController::class, 'post'])->name('admin.product.post');
 
