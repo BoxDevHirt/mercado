@@ -140,7 +140,7 @@ class AdminController extends Controller
                     ]
                 );
 
-
+                $solicitacao_id = Solicitacao::create($solicitacao);
 
                 $solicitacao_item = $request->validate(
                     [
@@ -154,11 +154,10 @@ class AdminController extends Controller
                     ]
                 );
 
-                $solicitacao_id = Solicitacao::create($solicitacao);
                 $date_solicitacao_item = $solicitacao_item;
                 $date_solicitacao_item['user_id'] = Auth::id();
-
                 $date_solicitacao_item['solicitacao_id'] = $solicitacao_id->id;
+
                 Solicitacao_Item::create($date_solicitacao_item);
 
                 return redirect()->back()->with('success', 'produto cadastrado com sucesso');

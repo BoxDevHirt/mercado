@@ -17,15 +17,19 @@
             </div>
         @endif
         <div style="display: flex; gap: 1rem">
-            @foreach ($solicitacao_item as $records)
-                @if ($records->user_id == auth()->id())
-                    <div>
-                        Solicitante: {{ $records->solicitacao->name }}<br /><br />
-                        Item: {{ $records->produtos->name }}<br /><br />
-                        Criado por: {{ $records->user->name }}
-                    </div>
-                @endif
-            @endforeach
+            @if (!empty($solicitacao_item))
+                @foreach ($solicitacao_item as $records)
+                    @if ($records->user_id == auth()->id())
+                        <div>
+                            Solicitante: {{ $records->solicitacao->name }}<br /><br />
+                            Item: {{ $records->produtos->name }}<br /><br />
+                            Criado por: {{ $records->user->name }}
+                        </div>
+                    @endif
+                @endforeach
+            @else
+                <div class="messages_errors">Não tem produtos cadastrados</div>
+            @endif
         </div>
     </div>
 @endsection
