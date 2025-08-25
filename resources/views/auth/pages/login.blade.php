@@ -15,7 +15,7 @@
                     </ul>
                 </div>
             @endif
-            <form action="{{ Route('client.login.post') }}" method="POST">
+            <form action="{{ Route('login.post') }}" method="POST">
                 @csrf
                 <label for="email">Email</label>
                 <input type="email" id="email" placeholder="Coloque seu email" name="email"

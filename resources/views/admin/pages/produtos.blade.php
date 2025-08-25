@@ -27,18 +27,18 @@
 @push('script')
     <script>
         $(document).ready(function() {
-            $('#myTable').DataTable({
-                processing: true,
-                serverSide: true,
-                ajax: {
-                    url: '{{ route("admin.datatables.product") }}',
-                    type: "GET"
+            $('#myTable').dataTable({
+                "processing": true,
+                "serverSide": true,
+                "ajax": {
+                    "url": "{{  Route('admin.datatables.product') }}",
+                    "type": "GET"
                 },
-                columns: [
-                    { data: 'id', name: 'id' },
-                    { data: 'name', name: 'name' },
-                    { data: 'price', name: 'price' },
-                ],
+                "columns": [
+                    { "data": "id", name: 'id' },
+                    { "data": "name",  name: 'name'  },
+                    { "data": "price", name: 'price' },
+                ]
             });
         });
     </script>

@@ -5,7 +5,6 @@ use App\Http\Controllers\Auth\AuthController;
 use App\Http\Controllers\Client\ClientMercadoController;
 use Illuminate\Support\Facades\Route;
 
-
 /**
  * Rota coringa
  * @Route - Rota de fallback
@@ -13,10 +12,11 @@ use Illuminate\Support\Facades\Route;
 Route::fallback(function () {
     if (!auth()->check()) {
         return redirect('/client');
+    } else {
+        return redirect('/admin');
     }
     abort(404);
 });
-
 
 /**
  * Rota coringa de inicialização
@@ -33,19 +33,25 @@ Route::prefix('client')->group(function () {
      * @Routes - Rotas relacionadas ao painel preços de produtos
      */
     Route::get('/', [ClientMercadoController::class, 'client'])->name('client');
+});
 
+/**
+ * Rota utilizada para conectar o login
+ * @Route::prefix - Grupo do login.
+ */
+Route::prefix('login')->group(function () {
     /**
      * @Routes - Rotas relacionadas ao login
      */
-    Route::get('/login', [AuthController::class, 'login'])->name('client.login');
-    Route::post('/login', [AuthController::class, 'post'])->name('client.login.post');
+    Route::get('/', [AuthController::class, 'login'])->name('login');
+    Route::post('/login', [AuthController::class, 'post'])->name('login.post');
 });
 
 /**
  * Rota utilizada para conectar a parte administrativa
  * @Route::prefix - Grupo do administrador. Tudo que visivel para o administrador
  */
-Route::middleware('auth')->prefix('admin')->group(function () {
+Route::middleware(['autenthication'])->prefix('admin')->group(function () {
     /**
      * @Route - Rotas relacionadas a painel administrativo inicial
      */
@@ -65,4 +71,14 @@ Route::middleware('auth')->prefix('admin')->group(function () {
      */
     Route::get('/categoria/{page}', [AdminController::class, 'getPage'])->name('admin.category.get');
     Route::post('/categoria', [AdminController::class, 'post'])->name('admin.category.post');
+
+    /**
+     * @Route - Rotas relacionadas aos pedidos
+     */
+    Route::get('/solicitacoes/{page}', [AdminController::class, 'getPage'])->name('admin.request');
+    Route::get('/solicitacoes/produtos/{page}', [AdminController::class, 'getPage'])->name('admin.request.product');
+    //-----------------//
+    Route::post('/solicitacoes', [AdminController::class, 'post'])->name('admin.request.post');
+    Route::post('/solicitacoes/produtos', [AdminController::class, 'post'])->name('admin.request.product.post');
+    //-----------------//
 });

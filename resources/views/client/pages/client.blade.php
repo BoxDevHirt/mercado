@@ -3,20 +3,21 @@
 @section('content')
     <div class="container">
         <div class="bloco_category">
-            <h1>{{ $category->name }}</h1>
+            @if (!empty($category->name))
+                <h1>{{ $category->name }}</h1>
+            @endif
         </div>
         <div class="bloco_table">
-            @if($products == null)
-            @else
+            @if (!empty($products))
                 <table class="table-custom">
                     <tbody>
-                    @foreach($products as $records)
-                        <tr>
-                            <td>{{ $records->id }}</td>
-                            <td>{{ $records->name }}</td>
-                            <td>R$ {{ $records->price }}</td>
-                        </tr>
-                    @endforeach
+                        @foreach ($products as $records)
+                            <tr>
+                                <td>{{ $records->id }}</td>
+                                <td>{{ $records->name }}</td>
+                                <td>R$ {{ $records->price }}</td>
+                            </tr>
+                        @endforeach
                     </tbody>
                 </table>
             @endif

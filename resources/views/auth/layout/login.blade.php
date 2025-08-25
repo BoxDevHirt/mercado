@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{{ asset('css/login.css') }}" />
     <link rel="stylesheet" href="{{ asset('css/global.css') }}" />
+    <link rel="shortcut icon" href="{{ asset('favicon.svg') }}" type="image/x-icon">
     <title>Mercado | @yield('title')</title>
 </head>
 

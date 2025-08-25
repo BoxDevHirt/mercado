@@ -65,41 +65,100 @@ body {
     color: #f5f5db;
 }
 
-.action_menu{
+.action_menu {
     position: absolute;
     right: 0;
     top: 0;
-    transform: rotateY(180deg);
-    margin-top: .5rem;
+    margin-top: 0.5rem;
     background-color: #9ea381;
-    padding: .5rem;
-    border-top-right-radius: 5px;
-    border-bottom-right-radius: 5px;
+    padding: 0.5rem;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
     color: #f5f5db;
     cursor: pointer;
 }
 
-.d_none{
-    transition: 300ms ease-in-out;
-    transform: translateX(-12rem);
-    position: absolute;
-    height: 100%;
+.d_icon {
+    transition: 500ms ease-in-out;
 }
 
-.show{
-    margin-left: 3rem;
+.icon > i {
+    transform: rotateY(180deg);
+    transition: 500ms ease-in-out;
 }
 
 .d_none_list{
     display: none;
 }
 
-.d_icon{
-    transform: rotateY(0);
-    border-top-left-radius: 5px;
-    border-bottom-left-radius: 5px;
-    border-top-right-radius: 0;
-    border-bottom-right-radius: 0;
+.d_none {
+    transition: 300ms ease-in-out;
+    transform: translateX(-12rem);
+    position: absolute;
+    height: 100%;
+}
+
+.show {
+    margin-left: 3rem;
+}
+
+.d_none_modal {
+    display: none;
+}
+
+.modal {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+}
+
+.modal_active {
+    position: fixed;
+    top: 5rem;
+    background-color: #868871;
+    padding: 1rem;
+    width: 50rem;
+    height: auto;
+    z-index: 2;
+    border-radius: 10px;
+    cursor: default;
+}
+
+.backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.8);
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+    z-index: 1;
+}
+
+.close {
+    color: #f5f5db;
+    width: 100%;
+    position: relative;
+}
+
+.close > i {
+    position: absolute;
+    right: -1rem;
+    top: -5rem;
+    background-color: #868871;
+    width: 3rem;
+    height: 3rem;
+    border-radius: 100%;
+    padding: 1rem;
+    cursor: pointer;
+}
+
+.modal_active form > label {
+    color: #f5f5db;
 }
 
 .main_content {
@@ -109,39 +168,39 @@ body {
     width: 100%;
 }
 
-.container{
+.container {
     padding: 1rem;
     width: 100%;
 }
 
-.container > h1{
+.container > h1 {
     color: #f5f5db;
     margin-bottom: 2rem;
 }
 
-.bloco_action{
+.bloco_action {
     display: flex;
     gap: 1rem;
     justify-content: end;
 }
 
-.bloco_action > .btn:nth-child(1){
+.bloco_action > .btn:nth-child(1) {
     background-color: #868871;
     color: #f5f5db;
     font-size: 1rem;
-    padding: .5rem;
+    padding: 0.5rem;
     border-radius: 5px;
 }
 
-.bloco_action > .btn:nth-child(2){
+.bloco_action > .btn:nth-child(2) {
     background-color: #f5f5db;
     color: #868871;
     font-size: 1rem;
-    padding: .5rem;
+    padding: 0.5rem;
     border-radius: 5px;
 }
 
-.input_style{
+.input_style {
     width: 100%;
     padding: 1rem;
     background-color: #f5f5db;
@@ -150,16 +209,16 @@ body {
     border: none;
     border-radius: 5px;
     font-size: 1rem;
-    margin-top: .5rem;
+    margin-top: 0.5rem;
 }
 
-.label_style{
+.label_style {
     color: #f5f5db;
     font-size: 1.3rem;
     font-weight: normal;
 }
 
-.select_style{
+.select_style {
     width: 100%;
     padding: 1rem;
     background-color: #f5f5db;
@@ -168,12 +227,12 @@ body {
     border: none;
     border-radius: 5px;
     font-size: 1rem;
-    margin-top: .5rem;
+    margin-top: 0.5rem;
 }
 
-.btn_submit{
+.btn_submit {
     width: 20rem;
-    padding: .8rem;
+    padding: 0.8rem;
     margin-top: 1rem;
     border-radius: 5px;
     font-size: 1rem;
@@ -209,6 +268,50 @@ body {
     background: #f5f5db;
 }
 
+.btn {
+    padding: 0.5rem;
+    border: none;
+    margin-top: 1rem;
+    width: 15rem;
+    height: 3rem;
+    border-radius: 5px;
+    background-color: #f5f5db;
+    color: #555742;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: .5rem;
+    cursor: pointer;
+}
+
 /* DataTable */
 
+/* header global admin */
 
+.header_admin_global {
+    display: grid;
+    grid-template-columns: 100px 100px;
+    justify-content: end;
+    gap: 1rem;
+}
+
+.header_admin_global button {
+    border: none;
+    background-color: #f5f5db;
+    padding: 1rem;
+    color: #555742;
+    border-radius: 5px;
+    font-size: 1rem;
+    text-align: center;
+    cursor: pointer;
+}
+
+.header_admin_global a {
+    border: none;
+    background-color: #868871;
+    padding: 1rem;
+    color: #f5f5db;
+    border-radius: 5px;
+    font-size: 1rem;
+    text-align: center;
+}

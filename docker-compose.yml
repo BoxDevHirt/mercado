@@ -1,0 +1,30 @@
+version: '3.8'
+
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: mercado
+    ports:
+      - "8000:9000"
+    volumes:
+      - .:/var/www
+    depends_on:
+      - mysql
+
+  mysql:
+    image: mysql:8
+    container_name: mysql_mercado
+    ports:
+      - "3306:3306"
+    environment:
+      MYSQL_DATABASE: mercado
+      MYSQL_USER: vitor
+      MYSQL_PASSWORD: 123@@
+      MYSQL_ROOT_PASSWORD: 123@@
+    volumes:
+      - mysql_data:/var/lib/mysql
+
+volumes:
+  mysql_data:
