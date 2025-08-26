@@ -87,7 +87,7 @@ body {
     transition: 500ms ease-in-out;
 }
 
-.d_none_list{
+.d_none_list {
     display: none;
 }
 
@@ -200,6 +200,42 @@ body {
     border-radius: 5px;
 }
 
+.card {
+    border: 1px solid #555742;
+    padding: 1rem;
+    border-radius: 10px;
+    background-color: #f5f5db;
+    width: 25rem;
+}
+
+.card div {
+    line-height: 2rem;
+}
+
+.text-danger {
+    border: 1px solid #9ea381;
+    background-color: #555742;
+    width: 100%;
+    padding: 1rem;
+    margin-top: 1rem;
+    border-radius: 5px;
+    font-size: 1rem;
+    color: #f5f5db;
+    cursor: pointer;
+}
+
+.text-cancel {
+    border: 1px solid #555742;
+    background-color: #f5f5db;
+    width: 100%;
+    padding: 1rem;
+    margin-top: 1rem;
+    border-radius: 5px;
+    font-size: 1rem;
+    color: #555742;
+    cursor: pointer;
+}
+
 .input_style {
     width: 100%;
     padding: 1rem;
@@ -280,7 +316,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: .5rem;
+    gap: 0.5rem;
     cursor: pointer;
 }
 

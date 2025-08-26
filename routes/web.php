@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Admin\AdminController;
+use App\Http\Controllers\Admin\GeneralController;
 use App\Http\Controllers\Auth\AuthController;
 use App\Http\Controllers\Client\ClientMercadoController;
 use Illuminate\Support\Facades\Route;
@@ -81,4 +82,9 @@ Route::middleware(['autenthication'])->prefix('admin')->group(function () {
     Route::post('/solicitacoes', [AdminController::class, 'post'])->name('admin.request.post');
     Route::post('/solicitacoes/produtos', [AdminController::class, 'post'])->name('admin.request.product.post');
     //-----------------//
+
+    /**
+     * @Route - Rota geral
+     */
+    Route::post('/solicitacoes/cancelar', [GeneralController::class, 'cancelar'])->name('admin.cancel');
 });

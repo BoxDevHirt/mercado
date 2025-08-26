@@ -157,6 +157,7 @@ class AdminController extends Controller
                 $date_solicitacao_item = $solicitacao_item;
                 $date_solicitacao_item['user_id'] = Auth::id();
                 $date_solicitacao_item['solicitacao_id'] = $solicitacao_id->id;
+                $date_solicitacao_item['status'] = 0;
 
                 Solicitacao_Item::create($date_solicitacao_item);
 

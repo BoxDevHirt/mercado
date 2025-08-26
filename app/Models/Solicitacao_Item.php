@@ -13,6 +13,7 @@ class Solicitacao_Item extends Model
         'quantidade',
         'user_id',
         'solicitacao_id',
+        'status'
     ];
 
     public function user(): BelongsTo

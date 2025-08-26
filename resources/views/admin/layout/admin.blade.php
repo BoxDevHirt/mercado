@@ -8,6 +8,8 @@
     <link rel="stylesheet" href="{{ asset('css/admin/admin.css') }}" />
     <link rel="stylesheet" href="{{ asset('css/global.css') }}" />
     <link rel="shortcut icon" href="{{ asset('favicon.svg') }}" type="image/x-icon">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+
     {{-- Font Awesome --}}
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css"
         integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ=="
@@ -18,6 +20,9 @@
     <link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.min.css">
     {{-- DataTables JS --}}
     <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
+    {{-- Swal --}}
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
 
     <title>Mercado | @yield('title')</title>
 </head>
